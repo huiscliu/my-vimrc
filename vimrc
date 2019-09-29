@@ -82,18 +82,11 @@ set statusline=%<\ %n:%f\ %m%r%y%=%-35.(%l\ of\ %L,\ %c%)
 "au InsertEnter * set laststatus=0
 "au InsertLeave * set laststatus=2
 
-
-"File type fortran and c++
-"High light
-"au BufNewFile,BufRead *.{[f|F],[F|f][O|o][R|r],[f|F]90,[f|F]95,[f|F][p|P][p|P],[f|F]77,[f|F][T|t][n|N],fortran} setf fortran
-au BufNewFile,BufRead *.{[c|C],[c|C][c|C],[c|C][p|P][p|P],[c|C][x|X][x|X],[i|I][p|P][p|P],[c|C]++,[t|T][c|C][c|C],moc,inl,[c|C][u|U]} setf cpp
-
 au BufWinEnter *[mM]akefile*,*.mk,*.mak,*.dsp,Make*.in set noet
 au BufWinEnter *[mM]akefile,*.mk,*.mak,*.dsp,Make*.in set noet
 au BufWinEnter *[mM]akefile*,*.mk,*.mak,*.dsp,Make*.in set tw=0
 au BufWinEnter *[mM]akefile,*.mk,*.mak,*.dsp,Make*.in set tw=0
 au BufWinEnter *.m set tw=0
-au BufWinEnter *[mM]akefile*,*.mk,*.mak,*.dsp,Make*.in set filetype=c
 
 if has("autocmd")
   au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
