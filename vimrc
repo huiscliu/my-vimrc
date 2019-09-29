@@ -110,6 +110,7 @@ let g:mapleader=","
 
 map <leader>n :cn<cr>
 map <leader>p :cp<cr>
+map <leader>e :set noet<cr>
 map <leader>w :set tw=0<cr>
 
 " color hack
