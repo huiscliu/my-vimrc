@@ -86,7 +86,6 @@ au BufWinEnter *[mM]akefile*,*.mk,*.mak,*.dsp,Make*.in set noet
 au BufWinEnter *[mM]akefile,*.mk,*.mak,*.dsp,Make*.in set noet
 au BufWinEnter *[mM]akefile*,*.mk,*.mak,*.dsp,Make*.in set tw=0
 au BufWinEnter *[mM]akefile,*.mk,*.mak,*.dsp,Make*.in set tw=0
-au BufWinEnter *.m set tw=0
 
 if has("autocmd")
   au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
@@ -111,6 +110,7 @@ let g:mapleader=","
 
 map <leader>n :cn<cr>
 map <leader>p :cp<cr>
+map <leader>w :set tw=0<cr>
 
 " color hack
 "hi Normal    guifg=white   guibg=black                    ctermfg=white       ctermbg=black
