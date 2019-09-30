@@ -92,9 +92,6 @@ if has("autocmd")
 endif
 
 " map keys
-cnoremap <C-A>      <Home>
-cnoremap <C-E>      <End>
-
 map f <C-f>
 map b <C-b>
 map t <C-o>
