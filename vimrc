@@ -4,7 +4,6 @@
 set history=3000
 filetype on
 filetype plugin on
-filetype plugin indent on
 syntax on
 
 "theme
@@ -14,9 +13,21 @@ syntax on
 set autoread
 au CursorHold * checktime
 
+set encoding=utf-8
+set fileencodings=utf-8,gb2312,gb18030,gbk,ucs-bom,cp936,latin1
+set termencoding=utf-8
+
+"deal with tab and shift
+set smarttab
+set et
+set ts=4
+set shiftwidth=4
+
+"text width
+set tw=110
+
 set hidden
 set magic
-set backspace=eol,start,indent
 set incsearch
 set hlsearch
 set smartcase
@@ -31,9 +42,10 @@ set ru
 set wildmenu
 set wildmode=list:longest
 
-"set autoindent
-set smartindent
-set ci 
+set nosmartindent
+set cindent
+filetype plugin indent on
+set cinkeys-=0#
 
 set pastetoggle=<F2>
 "set showmode
@@ -46,19 +58,6 @@ set clipboard=unnamed
 set ttyfast " u got a fast terminal
 "set ttyscroll=3
 set lazyredraw " to avoid scrolling problems
-
-set encoding=utf-8
-set fileencodings=utf-8,gb2312,gb18030,gbk,ucs-bom,cp936,latin1
-set termencoding=utf-8
-
-"deal with tab and shift
-set smarttab
-set et
-set ts=4
-set shiftwidth=4
-
-"text width
-set tw=110
 
 " statusline
 " cf the default statusline: %<%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P
@@ -110,51 +109,3 @@ map <leader>p :cp<cr>
 map <leader>e :set noet<cr>
 map <leader>w :set tw=0<cr>
 
-" color hack
-"hi Normal    guifg=white   guibg=black                    ctermfg=white       ctermbg=black
-"hi ErrorMsg  guifg=white   guibg=#287eff                  ctermfg=white       ctermbg=lightblue
-"hi Todo      guifg=#d14a14 guibg=#1248d1                  ctermfg=red         ctermbg=darkblue
-"hi Search    guifg=#20ffff guibg=#2050d0                  ctermfg=white       ctermbg=darkblue cterm=underline term=underline
-"hi IncSearch guifg=#b0ffff guibg=#2050d0                  ctermfg=darkblue    ctermbg=gray
-
-"hi SpecialKey guifg=darkcyan           ctermfg=darkcyan
-"hi Directory  guifg=cyan               ctermfg=cyan
-"hi Title      guifg=magenta gui=bold   ctermfg=magenta cterm=bold
-"hi WarningMsg guifg=red                ctermfg=red
-"hi WildMenu   guifg=yellow guibg=black ctermfg=yellow ctermbg=black cterm=none term=none
-"hi ModeMsg    guifg=#22cce2            ctermfg=lightblue
-"hi MoreMsg    ctermfg=darkgreen        ctermfg=darkgreen
-"hi Question   guifg=green gui=none     ctermfg=green cterm=none
-"hi NonText    guifg=#0030ff            ctermfg=darkblue
-
-"hi StatusLine   guifg=blue  guibg=darkgray gui=none ctermfg=blue  ctermbg=gray term=none cterm=none
-"hi StatusLineNC guifg=black guibg=darkgray gui=none ctermfg=black ctermbg=gray term=none cterm=none
-"hi VertSplit    guifg=black guibg=darkgray gui=none ctermfg=black ctermbg=gray term=none cterm=none
-
-"hi Folded     guifg=#808080 guibg=black ctermfg=darkgrey ctermbg=black cterm=bold term=bold
-"hi FoldColumn guifg=#808080 guibg=black ctermfg=darkgrey ctermbg=black cterm=bold term=bold
-"hi LineNr     guifg=white               ctermfg=green                  cterm=none
-
-"hi DiffAdd    guibg=darkblue                     ctermbg=darkblue cterm=none term=none
-"hi DiffChange guibg=darkmagenta                  ctermbg=magenta  cterm=none
-"hi DiffDelete guifg=Blue guibg=DarkCyan gui=bold ctermbg=cyan ctermfg=blue
-"hi DiffText              guibg=Red      gui=bold ctermbg=red      cterm=bold
-
-"hi Cursor     guifg=yellow guibg=gray  ctermfg=yellow ctermbg=gray
-"hi lCursor    guifg=black  guibg=white ctermfg=black ctermbg=white
-
-hi Comment    guifg=#00ff00   ctermfg=lightblue
-hi Constant   guifg=#00ff00   ctermfg=green
-hi Special    guifg=Orange    ctermfg=green     cterm=bold gui=bold
-hi Identifier guifg=#5080ff   ctermfg=blue      cterm=none
-hi Statement  guifg=#ffff60   ctermfg=yellow    cterm=bold gui=bold
-hi PreProc    guifg=Orange    ctermfg=red       cterm=bold gui=bold
-hi type       guifg=#ffff60   ctermfg=cyan      cterm=bold gui=none
-
-"hi Underlined cterm=underline term=underline
-"hi Ignore     guifg=bg ctermfg=bg
-
-"hi Pmenu      guifg=#efefef guibg=#333333  ctermfg=black ctermbg=gray
-"hi PmenuSel   guifg=#101010 guibg=yellow   ctermfg=black ctermbg=yellow
-"hi PmenuSbar  guifg=blue    guibg=darkgray ctermfg=blue  ctermbg=darkgray
-"hi PmenuThumb guifg=#c0c0c0
