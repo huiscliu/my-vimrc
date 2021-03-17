@@ -45,7 +45,8 @@ set wildmode=list:longest
 set nosmartindent
 set cindent
 filetype plugin indent on
-set cinkeys-=0#
+"set cinkeys-=0#
+set cino +=g0
 
 set pastetoggle=<F2>
 "set showmode
